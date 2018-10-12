@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/myfridge_toolbar"
@@ -35,12 +39,15 @@
         android:id="@+id/myfridge_rv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintTop_toBottomOf="@id/myfridge_toolbar" />
 
     <android.support.constraint.ConstraintLayout
-        android:layout_marginBottom="50dp"
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="100dp"
+        android:layout_marginBottom="50dp"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <ImageView
@@ -83,7 +90,6 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/myfridge_add_tv" />
 
+        </android.support.constraint.ConstraintLayout>
     </android.support.constraint.ConstraintLayout>
-
-
-</android.support.constraint.ConstraintLayout>
+</ScrollView>
