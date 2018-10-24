@@ -1,12 +1,18 @@
 package com.fridge_manager.ui.MyFridge
 
+import android.app.Dialog
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.LinearLayoutManager
+import android.view.Gravity
+import android.view.ViewGroup
+import android.widget.LinearLayout
+import android.widget.PopupMenu
+import android.widget.PopupWindow
 import com.fridge_manager.Adapter.MyFridgeListAdapter
 import com.fridge_manager.Model.MyFridgeItem
 import com.fridge_manager.R
 import kotlinx.android.synthetic.main.activity_myfridgelist.*
+import org.jetbrains.anko.sdk27.coroutines.onClick
 
 class MyFridgeListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,15 +26,19 @@ class MyFridgeListActivity : AppCompatActivity() {
 
         val listadapter = MyFridgeListAdapter(sampledata)
 
-        with(myfridge_rv){
+        with(myfridgelist_rv){
             adapter = listadapter
-            layoutManager = object : LinearLayoutManager(this@MyFridgeListActivity){
-                override fun canScrollVertically(): Boolean {
-                    return false
-                }
             }
+
+        myfridgelist_menu.onClick {
+            val view = layoutInflater.inflate(R.layout.popup_myfridgelist,null)
+            val popupWindow = PopupWindow(view,ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT)
+            popupWindow.showAtLocation(view,Gravity.END,0,0)
+            popupWindow.isFocusable = true
+
+
+
         }
 
-
-    }
+        }
 }

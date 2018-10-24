@@ -2,12 +2,12 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="120dp">
+    android:layout_height="140dp">
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/item_myfridge"
         android:layout_width="match_parent"
-        android:layout_height="90dp"
+        android:layout_height="100dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -42,6 +42,27 @@
             android:text="2018/00/00"
             app:layout_constraintStart_toEndOf="@id/item_myfridge_lastdate_title"
             app:layout_constraintTop_toBottomOf="@id/item_myfridge_title_tv" />
+
+        <TextView
+            android:id="@+id/item_myfridge_id_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="아이디 : "
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_myfridge_lastdate_title" />
+
+        <TextView
+            android:id="@+id/item_myfridge_id_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="SY1021"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@id/item_myfridge_id_title"
+            app:layout_constraintTop_toBottomOf="@id/item_myfridge_lastdate_title" />
 
         <TextView
             android:id="@+id/item_myfridge_contents_count"

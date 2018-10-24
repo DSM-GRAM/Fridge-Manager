@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.fridge_manager.Model.MyFridgeItem
 import com.fridge_manager.R
+import org.jetbrains.anko.sdk27.coroutines.onClick
 
 class MyFridgeListAdapter(val items : ArrayList<MyFridgeItem>) : RecyclerView.Adapter<MyFridgeListAdapter.MyFridgeViewHolder>() {
 
@@ -20,6 +21,9 @@ class MyFridgeListAdapter(val items : ArrayList<MyFridgeItem>) : RecyclerView.Ad
         holder.title.text = items[position].title
         holder.last_date.text = items[position].lastdate
         holder.contents_count.text = items[position].contents_count
+        holder.item.onClick {
+
+        }
     }
 
     override fun getItemCount(): Int = items.size
@@ -28,5 +32,6 @@ class MyFridgeListAdapter(val items : ArrayList<MyFridgeItem>) : RecyclerView.Ad
         val title = itemView.findViewById<TextView>(R.id.item_myfridge_title_tv)
         val last_date = itemView.findViewById<TextView>(R.id.item_myfridge_lastdate_content)
         val contents_count = itemView.findViewById<TextView>(R.id.item_myfridge_contents_count)
+        val item = itemView
     }
 }

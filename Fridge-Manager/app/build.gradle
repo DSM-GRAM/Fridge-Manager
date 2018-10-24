@@ -34,6 +34,8 @@ dependencies {
     implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
     //anko
     implementation 'org.jetbrains.anko:anko:0.10.7'
+    //SlidingDrawer
+    implementation 'com.github.moraisigor:slidingdrawer:1.7.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
